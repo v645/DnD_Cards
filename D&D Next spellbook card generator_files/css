@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>D&D Next spellbook card generator</title>
+<meta charset="utf-8">
+<meta name="yandex-verification" content="c12b92cb78b93c96" />
+<meta name="yandex-verificaton" content="7376d70f41c08807">
+<meta name="description" content="This is D&D Next spell cards generator for printing. I wrote it for myself, but may be it will useful for you.">
+<meta property="og:description" content="Карты заклинаний для DnD 5ed. Для собственных нужд написали небольшой сервис, которому скармливаешь csv файлы и получаешь на выходе карты заклинаний. Возможно вам тоже пригодится - пользуйтесь!">
+
+<link href='fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-title" content="Hardcodex">
+<meta name="application-name" content="Hardcodex">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="yandex-verification" content="12b287654e0e63ed" />
+<meta name="yandex-verification" content="2f5007024aa9b6ac" />
+
+<style type="text/css">
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+    font-size: 12pt;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.hrefs
+{
+    text-align:center;
+    width:100%;
+    height:690px;
+    position:absolute;
+    top:50%;
+    margin-top:-345px;
+
+    padding-left: 190px;
+    box-sizing: border-box;
+}
+
+.hrefs a
+{
+    display:inline-block;
+    margin:5px 5px 35px;
+    height:314px;
+    background:url("images/spellbook_mustache.png") no-repeat;
+    /*background:url("images/spellbook_xmas.png") no-repeat;*/
+    vertical-align: top;
+}
+
+.hrefs a:hover
+{
+    opacity:0.9;
+}
+
+#paladin    { background-position:-19px -6px; width:225px;  margin: 0px 10px 10px 0px;}
+#wizard     { background-position:-280px -6px; width:226px;  margin: 0px 0px 10px 10px;}
+#sorcerer   { background-position:-506px -6px; width:225px;  margin: 0px 10px 10px -4px;}
+#ranger     { background-position:-770px -6px; width:223px;  margin: 0px 10px 10px 10px;}
+#warlock    { background-position:-1012px -6px; width:436px;  margin: 0px 0px 10px 10px;}
+#bard       { background-position:-20px -355px; width:451px;  margin: 0px 10px 0px 0px;}
+#druid      { background-position:-506px -355px; width:451px;  margin: 0px 17px 0px 4px;}
+#cleric     { background-position:-995px -355px; width:451px;  margin: 0px 0px 0px 10px;}
+
+
+#smile
+{
+    position: relative;
+    z-index: 10;
+}
+
+.hrefs a.monsters {
+    font-size: 24px;
+    display: block;
+    height: auto;
+    background: none;
+    padding: 20px 0;
+    margin: 10px auto;
+    width: 60%;
+    color:#000;
+    background:#ccc;
+    text-decoration:none;
+}
+
+.hrefs a.monsters:hover {
+    opacity:0.7;
+}
+
+.patreon{
+    position: absolute;
+    left: 0;
+    top:0;
+    position: 1;
+    background: #fff;
+    padding: 5px 10px;
+}
+.nameDiv>span
+{
+    display: flex;
+    font-size:12px;
+    line-height: 28px;
+}
+.nameDiv>span img
+{
+    margin-right: 10px;
+}
+
+</style>
+</head>
+<body>
+
+ <div class="hrefs">
+    <a href="artificer/" class="monsters" style="       width: 40%;    background: #ebc467;">ARTIFICER</a>
+    <a id="paladin" href="paladin/"></a>
+    <a id="wizard" href="wizard/"></a>
+    <a id="sorcerer" href="sorcerer/"></a>
+    <a id="ranger" href="ranger/"></a>
+    <a id="warlock" href="warlock/"></a>
+
+    <a id="bard" href="bard/"></a>
+    <a id="druid" href="druid/"></a>
+    <a id="cleric" href="cleric/"></a>
+    <a href="monsters/" class="monsters">Monsters for DM</a>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- mainpage bottom -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-9874525876145198"
+         data-ad-slot="2542238266"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+ </div>
+
+ <div class="patreon">
+    <b>Subscribe <a href="https://boosty.to/hardcodex" class="btn btn-small" style="    background: #f15f2c;
+    color: #fff;
+    padding: 0 5px;
+    margin-left: 6px;
+    font-style: italic;">Boosty</a></b> <br><br>
+    <b>PATRONS<a href="https://www.patreon.com/jeyvi" class="btn btn-small" style="background:#E6461A;color:#fff;padding: 0 5px;margin-left: 6px;">Patreon</a></b>
+
+<div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/14033766" width="28px" height="28px" style="display: block;"><span class="nameText">Connie Weisdepp</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/8267000/c3dc1dcbe7854e3aa88c2843f926625e/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=rRLEDt2wXdc_jSltK6cOAyvMET5BqxnrO6rtva8_h5I%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Douglas L. Holeman</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/36187580/32ca324adf0344569fb721eb1048c733/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=-wcLErZ1np4vC6CZHgOlfIjhBQ3SNi6j0mhaoGs8UEA%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Steffen Trautmann</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/51126285" width="28px" height="28px" style="display: block;"><span class="nameText">Mathew S Wahonick</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/27175593/81ce022880364caf8feed2987ab863cc/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=BmzmkkcThKACxYyasS_mxEmeBfpagP88X-kID-qi3IE%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Peter Eriksson</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/5333724/6be0ed1216f64ead818d8ed1df770d6e/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=OBNHlpGFcLVv80rCxgrZYW50brZPy6Q3EogAFBazmVk%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Alexander Elgin</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/13726100" width="28px" height="28px" style="display: block;"><span class="nameText">Ninolen Windecho</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/14766850" width="28px" height="28px" style="display: block;"><span class="nameText">eeks! </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/12183704/6d19c7b170e4400ea3f2e468bec5d36b/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=uGLCIGZ286JZyqr-GVpgDqOYO77RInfuHuvvlgFSy3A%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Timothy Swiger</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/49179990" width="28px" height="28px" style="display: block;"><span class="nameText">Bananders</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/54874703/6876f8aa1ea64aa09b9cd6e770630068/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=hq_uZCvDFWN46JpnYdWFWc66bAfpSsyRAaWK0e222Dw%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Carlos López</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/22849936" width="28px" height="28px" style="display: block;"><span class="nameText">Derrick Tan</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/40773365/ce96ac7d4f8d4601b20549a4c8174409/eyJ3IjoyMDB9/2.png?token-time=2145916800&token-hash=ir-CL7v-opsazcHCn5tQdEkXDMuQgyOwqAGQGrru0Jc%3D" width="28px" height="28px" style="display: block;"><span class="nameText">DoctorMisterKevinPants</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/8069899/6b94812180bc438e84724a86d487269f/eyJ3IjoyMDB9/1.JPG?token-time=2145916800&token-hash=xUtNSlkJ4SGffus5gt3seZuxXUChb0KETzSiwlYUdDw%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Christian King</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/578422/d73cd07483194f008f092256f457bd16/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=1qjS3EgVAt6N1oMX0t6rTW4GfGG8nUPNVycEDiHZ1Hg%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Ira Fich</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/47488184/cfb1b3154213480f8a2d8e895c1c3b5a/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=jYLEIFlt2UFF0KzpexPp91fPuz7PYephX0okag_o_Ew%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Anthony Paepcke</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/70220050/6b1a65d9df004d43992e73ecd23fc6f0/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=najaF3PrONKOEuhIpf6D0M1VF0dGSGvLLxZabl8GqcA%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Susie Somday</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/12743786" width="28px" height="28px" style="display: block;"><span class="nameText">Brian Barringer</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/10921150" width="28px" height="28px" style="display: block;"><span class="nameText">Jeremy Everett Uff</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/62547275/06720ee71b454bc6ad01c84e59ad4450/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=uMx3hHNNytksoPHdOimFjenmpP_cU_EHaMYbOkwdF4E%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Grzegorz Nawrat</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/20625368" width="28px" height="28px" style="display: block;"><span class="nameText">chris </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/8204739" width="28px" height="28px" style="display: block;"><span class="nameText">Robert Parker</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/51787177/700909588f7e4569b138509f788e48c5/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=LfSSIaAVY7RfHlaVc3Bd_CkqXfu3Orbr9Z7eOJBI2pg%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Jacob Johnston</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/4259538" width="28px" height="28px" style="display: block;"><span class="nameText">Fergus Wyrm</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/32703557/0a13012ea2a04247b6f919e8cf683b0a/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=svvSsezvPjL9B1X39B7_uDpfZDPSt2rZOu4_suGT9vo%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Teodor Ahlinder</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/34424511/5385ec551d144870924666d11564a04e/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=gY60GKR87GbJkti3FEN1PxjtYcjZd0V_67bD2jDA7ek%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Cathy Barabas</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/48941643" width="28px" height="28px" style="display: block;"><span class="nameText">Krzysztof</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/2652663" width="28px" height="28px" style="display: block;"><span class="nameText">isabella Brooks</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/6326168/051c782a25bb413e9990b43f791a48a2/eyJ3IjoyMDB9/2.JPG?token-time=2145916800&token-hash=4KL7gC5IoFcyn8oaWDxyCBOjEmw4H6yxek9Y0EXIOHw%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Jarrah Hodge</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/35805892/0ae42a50471741e1a2de588015a56d80/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=SbWN6xJqz-fs4Na6vqIfMS61yz8z0a9H6rn0_l6FAJg%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Danny Clayton</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/10532669" width="28px" height="28px" style="display: block;"><span class="nameText">Sami Sorvo</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/4098358/521bb8e3356a41149878533e9a215f3d/eyJ3IjoyMDB9/2.jpeg?token-time=2145916800&token-hash=1ui4nCQPomet1PJqh0KzbBfJ31CzB5DcVGHbcX5sTio%3D" width="28px" height="28px" style="display: block;"><span class="nameText">John and Lauren Banks</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/51394209" width="28px" height="28px" style="display: block;"><span class="nameText">Mike Smith</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/32177362/b9c1fb20e81742ea832eb67d579ac178/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=pz556eQyaS1qj94Vpxus7O-R9PVJKo429rXVTC4jmOI%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Hana San</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/59979803/3b9cf514b2064a16acebae776452c5fa/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=rQ54lVL5T59AkMVjLT6SjPT439OCs0igKVlA_vzaHOA%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Saul A</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/3386432" width="28px" height="28px" style="display: block;"><span class="nameText">Gretchen Floyd</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/725016" width="28px" height="28px" style="display: block;"><span class="nameText">Raevenote </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/86194/9fa4b0fceb9b4d4b945c52d954a9813a/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=V5I2jDJi_8wMQf5WQEMdRBCfYFJXTpjIqkhY6eqKZPY%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Daniel Bothwell</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/16509483" width="28px" height="28px" style="display: block;"><span class="nameText">Noxious Imp</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/39052032/cc5e362205744767bda0b71d3faa3d3a/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=77b7nMaLQQnzGsh-torVZllW3hIkbuY2ANXW9vyG2b8%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Francis Talbot</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/5652668" width="28px" height="28px" style="display: block;"><span class="nameText">peachykeen</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/22868564" width="28px" height="28px" style="display: block;"><span class="nameText">Zzz </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/28867810" width="28px" height="28px" style="display: block;"><span class="nameText">Rhianna Kay</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/54776548" width="28px" height="28px" style="display: block;"><span class="nameText">Brian</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/61912037/5be515e966fa4979b14b5b2b43f081ca/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=Jyva_Lvr1wHckqltBHRMkXhvaKKQldjHRTz82IzMw1k%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Curtis Penrose</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/77599841/4742ceab7d1a478a82bd4c2d37425051/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=RiBhN9XRbcNqS6EcD7eggfXTYJ9TCG3PhFCIHgM6epY%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Richard Parkinson</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/48158620/e7798b02a68842c9a2133b837402c736/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=RbxcnMofpCEPm5wWlkH7TrpRFqD7gYEexlnGaIsqU44%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Davide Santini</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/23944858" width="28px" height="28px" style="display: block;"><span class="nameText">isaac </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/16269873" width="28px" height="28px" style="display: block;"><span class="nameText">Silendor </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/12588566/5bd69aed74dd448db797b15ec2f0f9f1/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=0VBeCq4UjBIX0weqq05X6w_re6W7Cn4NvwrIp7D89go%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Kody </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/166928" width="28px" height="28px" style="display: block;"><span class="nameText">Brad Greer</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/6980358" width="28px" height="28px" style="display: block;"><span class="nameText">Jon Penn</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/7120591/466caa7a65964c3caacb1d9b805f5ef6/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=DbyrBw6kc4FVyvPiW2e9LPzaMu9C2EPuJdDCHHMweQY%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Sarah Hupcey</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/34807271/24e24dad1f5e451b845557dee21c924b/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=C1wHdWiyuAWrO_7ojWHQaZpW3XQXPkHZKABf6DtIdlo%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Jelly Feynandohl</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/57620150/d0c9949c79ec48f68a4ac3a6db821f3f/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=-MxXmYiTymi-JPkSaoj5QNqbYEvg4RX7z_witcYIxQI%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Ashley W.</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/68963080/2373bc1e4e0c4888b15b60049961c982/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=1hOUlt-B1uX14xvEg_Yyk5zQnEae442kQNeIYB0-hAI%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Reima Koivukoski</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/3108299/90da54e9f7cc4d39ab5b1e99b9f2f5be/eyJ3IjoyMDB9/2.jpeg?token-time=2145916800&token-hash=cy2xQUBilOYmAr8LOgcjPiHNkZbolPLbWwPelvd9lSA%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Aisa </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/3249895/6ad9627509bf484ea9a892a3b0beeb55/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=V_PQSGphvNyJSEmHSP-bW4ihcK2RqzXl8B16wZ32X5I%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Bloom </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/20415632" width="28px" height="28px" style="display: block;"><span class="nameText">Neon.Leon</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/35715696/fef304e974cb438d9bf1f484f6fa6b35/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=gLAcclh8SVMRGLQJwxS-xz0MmCJrXtGPg0d8kmHtwDk%3D" width="28px" height="28px" style="display: block;"><span class="nameText">bearli .</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/81082705" width="28px" height="28px" style="display: block;"><span class="nameText">Alex Moorhead</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/683507" width="28px" height="28px" style="display: block;"><span class="nameText">Scott </span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/45085351" width="28px" height="28px" style="display: block;"><span class="nameText">irmker04</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/3352313" width="28px" height="28px" style="display: block;"><span class="nameText">Miggs Perez</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/28494863/9e530a7a2be94923968c1b663ba59ed7/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=-DV4xmQvEx6Tlec_RaWSHBZLdp1U1zsTwwxuhECfzIY%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Virág Dér</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/94847666/8d19c602541e4411ac656780f8b7f02a/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=EPEKHWF-_Uu5NgFBFVeIEkJhEtieLmXwdOwTk7g_6Ow%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Jillian Lee</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/93249892/a9170e06dad7480d875dc44ef50927c9/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=xSkBT_7PqF-i4SvimJo3-wEvWmtvvpGlCxaEOEsQvFU%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Davide Buonocore</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/11677693/09e421871e514f39a12fb10030a25c66/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=WvrqZh5hNm6fTUkKmbk63Z9yhGp60Vuj9-xYFCzP5SA%3D" width="28px" height="28px" style="display: block;"><span class="nameText">David Sklenicka</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/3666329/ec0036d36400478882b1a72f9730892f/eyJ3IjoyMDB9/2.jpg?token-time=2145916800&token-hash=JVNwFunIvQQbzHpR1OLB-4lNM79Elk1du_8d4deStmo%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Joe Mike T</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/34361007" width="28px" height="28px" style="display: block;"><span class="nameText">Bean Cummings</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/39771157/c573ef4d2ddf4e5db1e309c88180e382/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=Hg8nDe_oqsUokEw3P5kTpeHphCM8Bb-7h6MWDCJsL2o%3D" width="28px" height="28px" style="display: block;"><span class="nameText">ENKOR COMMUNITY</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/76933802" width="28px" height="28px" style="display: block;"><span class="nameText">franniboii</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/112780461/97d232b696d34470b2fc64d8b082ca49/eyJ3IjoyMDB9/1.jpeg?token-time=2145916800&token-hash=pJgpGy1-BkQEkxvplttVCbMSbHRqU8FzbHZvvaYAVls%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Vladimíra Šoltysová</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c8.patreon.com/3/200/65456619" width="28px" height="28px" style="display: block;"><span class="nameText">John Constable</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/14580550/6e12484638a7472fbe0d857cee21d330/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=Iak06TC-oiOBodujI0YlxZPotaz8JbxeV8hHNvexMbw%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Jessica Butters</span></span></div><div class="nameDiv"><span><img class="nameImage lazy" src="https://c10.patreonusercontent.com/4/patreon-media/p/user/61453993/37e81a6a895d48ea95cfb15e77a47971/eyJ3IjoyMDB9/1.png?token-time=2145916800&token-hash=8IZ0JbV0HMMY1du22X7ACtFiRQjLaVGRS5_FL0u9qqM%3D" width="28px" height="28px" style="display: block;"><span class="nameText">Molly Hoffman</span></span></div>
+
+</div>
+
+
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25867631 = new Ya.Metrika({id:25867631,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25867631" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
