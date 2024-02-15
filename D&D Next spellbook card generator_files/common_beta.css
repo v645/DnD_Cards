@@ -601,8 +601,8 @@ body {
 
 .card *
 {
-	font-size: 10px;
-	color: #676a6c!important;
+	/*font-size: 10px;*/
+	/* color: #676a6c!important; */
 }
 
 .card
@@ -2031,7 +2031,7 @@ input[name="level"]
 
 .card *
 {
-	color:black!important;
+	/* color:black!important; */
 }
 .card .need,
 .card .type,
@@ -2039,6 +2039,14 @@ input[name="level"]
 {
 	color:white!important;
 }
+
+.need2,
+{
+	color:white!important;
+	padding: 0px 0px 0px;
+}
+
+
 
 /*page*/
 .page {
