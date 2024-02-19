@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,36 +14,45 @@ namespace SortCards
             string filePath = @"E:\print.html";
             htmlDoc.Load(path, true);
 
-            for (int classV = 0; classV < 10; classV++)
+            var delimiter = htmlDoc.DocumentNode.SelectSingleNode("//*[@id=\"myCanvas\"]/div[5]/br[1]");
+            var delimiter2 = htmlDoc.DocumentNode.SelectSingleNode("//div[contains(@class, 'noprint separator nomobile')]"); //<div class="noprint separator nomobile"></div>
+
+            foreach (var item in htmlDoc.DocumentNode.SelectNodes($"//div[contains(@class, 'card cardBlock card-right flip')]")) //remove all flips
             {
-                var divList = htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'card card-left cardBlock class-4')]");
+                item.ParentNode.RemoveChild(item);
+            }
+
+            int classV = 1;
+            //for (int classV = 13 - 1; classV >= 1; classV--)
+            {
+                var divList = htmlDoc.DocumentNode.SelectNodes($"//div[contains(@class, 'card card-left cardBlock class-{classV}')]");
+                try
+                {
+                    var a = divList[0].ParentNode; 
+                }
+                catch (System.Exception e)
+                {
+
+                    Console.WriteLine($"{classV}\n{e}");
+                  //  continue;
+                }
+                
                 var currentListNode = divList[0].ParentNode;// htmlDoc.DocumentNode.SelectSingleNode("//*[@id=\"myCanvas\"]/div[5]");
 
-                List<string> divContents = new List<string>();
-
-                foreach (var item in htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'card cardBlock card-right flip class-4')]")) //<div class="card cardBlock card-right flip class-4">
-                {
-                    currentListNode.RemoveChild(item);
-                }
-
-                var delimiter = htmlDoc.DocumentNode.SelectSingleNode("//*[@id=\"myCanvas\"]/div[5]/br[1]");
-                var delimiter2 = htmlDoc.DocumentNode.SelectSingleNode("//div[contains(@class, 'noprint separator nomobile')]"); //<div class="noprint separator nomobile"></div>
                 int cId = 0;
 
+                Console.Write($"{classV} :");
                 F("Трюк, ");
                 for (int i = 1; i < 10; i++)
                 {
                     F(i + " круг, ");
+                    Console.Write($"{i} ");
                 }
+
 
                 currentListNode.AppendChild(delimiter);
                 currentListNode.AppendChild(delimiter2);
-
-                //// Write the text to the file
-                //using (StreamWriter writer = new StreamWriter(filePath))
-                //{
-                //    writer.WriteLine(div.OuterHtml);
-                //}
+                Console.WriteLine($"|{classV} - OK");
 
                 void F(string level)
                 {
@@ -62,6 +72,7 @@ namespace SortCards
                     //currentListNode.AppendChild(delimiter2);
                 }
             }
+
             htmlDoc.Save(filePath);
         }
 
