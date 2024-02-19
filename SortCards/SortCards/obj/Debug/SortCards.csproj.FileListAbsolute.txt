@@ -9,3 +9,14 @@ E:\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.dll
 E:\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.pdb
 E:\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.xml
 E:\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.csproj.CopyComplete
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\SortCards.exe.config
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\SortCards.exe
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\SortCards.pdb
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.dll
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.pdb
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\bin\Debug\HtmlAgilityPack.xml
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.csproj.AssemblyReference.cache
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.csproj.CoreCompileInputs.cache
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.csproj.CopyComplete
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.exe
+E:\DnD_Cards\DnD_Cards\SortCards\SortCards\obj\Debug\SortCards.pdb

@@ -1,11 +1,6 @@
 ﻿using HtmlAgilityPack;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SortCards
 {
@@ -13,82 +8,63 @@ namespace SortCards
     {
         static void Main(string[] args)
         {
-            //V();
-
             var htmlDoc = new HtmlDocument();
 
-            htmlDoc.Load(path,true);
-
-            var divList = htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'card card-left cardBlock class-4')]");
-
-            List<string> divContents = new List<string>();
-
             string filePath = @"E:\print.html";
+            htmlDoc.Load(path, true);
 
-            // Write the text to the file
-            using (StreamWriter writer = new StreamWriter(filePath))
+            for (int classV = 0; classV < 10; classV++)
             {
-                
-            
+                var divList = htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'card card-left cardBlock class-4')]");
+                var currentListNode = divList[0].ParentNode;// htmlDoc.DocumentNode.SelectSingleNode("//*[@id=\"myCanvas\"]/div[5]");
 
-            foreach (var div in divList.Where(x => x.InnerHtml.Contains("Трюк, ")))
-            {
-                    writer.WriteLine(div.OuterHtml);
-                divContents.Add(div.OuterHtml);
+                List<string> divContents = new List<string>();
+
+                foreach (var item in htmlDoc.DocumentNode.SelectNodes("//div[contains(@class, 'card cardBlock card-right flip class-4')]")) //<div class="card cardBlock card-right flip class-4">
+                {
+                    currentListNode.RemoveChild(item);
+                }
+
+                var delimiter = htmlDoc.DocumentNode.SelectSingleNode("//*[@id=\"myCanvas\"]/div[5]/br[1]");
+                var delimiter2 = htmlDoc.DocumentNode.SelectSingleNode("//div[contains(@class, 'noprint separator nomobile')]"); //<div class="noprint separator nomobile"></div>
+                int cId = 0;
+
+                F("Трюк, ");
+                for (int i = 1; i < 10; i++)
+                {
+                    F(i + " круг, ");
+                }
+
+                currentListNode.AppendChild(delimiter);
+                currentListNode.AppendChild(delimiter2);
+
+                //// Write the text to the file
+                //using (StreamWriter writer = new StreamWriter(filePath))
+                //{
+                //    writer.WriteLine(div.OuterHtml);
+                //}
+
+                void F(string level)
+                {
+                    foreach (var div in divList.Where(x => x.InnerHtml.Contains(level)))
+                    {
+                        currentListNode.RemoveChild(div);
+                        var nPos = currentListNode.AppendChild(div);
+
+                        if (cId++ >= 15)
+                        {
+                            currentListNode.AppendChild(delimiter);
+                            currentListNode.AppendChild(delimiter2);
+                            cId = 0;
+                        }
+                    }
+                    //currentListNode.AppendChild(delimiter);
+                    //currentListNode.AppendChild(delimiter2);
+                }
             }
-            }
+            htmlDoc.Save(filePath);
         }
 
         const string path = @"E:\V.html";
-
-        static void V()
-        {
-            // Read the HTML file
-            string html = File.ReadAllText(path);
-
-            // Find all <div> elements with class "card card-left cardBlock class-4"
-            //string pattern = "\\d круг";
-            string pattern = "трюк,";
-            var divElements = html.Split(new[] { "<div class=\"card card-left cardBlock class-4", "</div>" }, StringSplitOptions.RemoveEmptyEntries).Where(x => x.Contains(pattern));
-
-            Console.WriteLine($"{html.Length} divElements {divElements.Count()}");
-
-            
-            // Print the filtered strings
-            foreach (var filteredString in divElements)
-            {
-                Console.WriteLine(filteredString);
-            }
-
-            Console.ReadLine();
-          
-            // Extract the <b class="type srtype"> elements from each <div> element
-            var typeElements = divElements.Select(x => x.Split(new[] { "<b class=\"type srtype\">", "</b>" }, StringSplitOptions.RemoveEmptyEntries));
-
-            foreach (var group in typeElements)
-            {
-                for (int i = 0; i < group.Length; i++)
-                {
-                    Console.WriteLine($"{i}::::{group[i]} ");
-                }
-                
-            }
-
-                // Group the <div> elements by the <b class="type srtype"> element
-                var groupedDivElements = typeElements.GroupBy(x => x[1]);
-
-            // Sort the groups by the <b class="type srtype"> element
-            var sortedGroupedDivElements = groupedDivElements.OrderBy(x => x.Key);
-
-            // Print the sorted groups
-            foreach (var group in sortedGroupedDivElements)
-            {
-                Console.WriteLine($"Type: {group.Key}");
-                //foreach (var divElement in group)
-                //{
-                //    Console.WriteLine(divElement[1]);
-                //}
-            }
-        }
     }
 }
