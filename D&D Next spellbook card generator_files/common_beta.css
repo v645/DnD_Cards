@@ -81,7 +81,7 @@ body{padding-top:50px;}body>.navbar{-webkit-transition:background-color 300ms ea
 
 	#tools div
 	{
-	  color: #2c3e50;
+	  color: black;
 	}
 
 html .joesterMode .page
@@ -2034,10 +2034,6 @@ input[name="level"]
 	left:60px;
 }
 
-.card *
-{
-	/* color:black!important; */
-}
 .card .need,
 .card .type,
 .card .class
