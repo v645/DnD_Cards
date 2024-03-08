@@ -1473,17 +1473,17 @@ html .showAll .mirrorpage
 	.card.class-3,
 	.card.class-3 .need
 	{
-		background-color:#ffff99!important;
+		background-color:#d9d916!important;
 	}
 
 	.card.card-right.class-3
 	{
-		box-shadow:#ffff99 0 10px 0px 10px!important;
+		box-shadow:#d9d916 0 10px 0px 10px!important;
 	}
 
 	.card.class-3 .back .body *
 	{
-		color:#ffff99!important;
+		color:#d9d916!important;
 	}
 
 
@@ -1496,7 +1496,7 @@ html .showAll .mirrorpage
 	.card.class-3 .b-lb,
 	.card.class-3 .b-rb
 	{
-		border-color:#ffff99!important;
+		border-color:#d9d916!important;
 	}
 
 	.card.class-3 .status li em,
@@ -1518,7 +1518,7 @@ html .showAll .mirrorpage
 	.class-3 .body .b-lb:before,
 	.class-3 .body .b-rb:before
 	{
-		color:#cccc7a!important;
+		color:#91913f!important;
 	}
 
 
@@ -2072,7 +2072,7 @@ input[name="level"]
 {
 	width: 2.5in;
 	min-width: 2.5in;
-	height: 3.5in;	
+	height: 340px;	
 }
 
 .pages .cardlist
