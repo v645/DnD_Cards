@@ -81,7 +81,7 @@ body{padding-top:50px;}body>.navbar{-webkit-transition:background-color 300ms ea
 
 	#tools div
 	{
-	  color: #2c3e50;
+	  color: black;
 	}
 
 html .joesterMode .page
@@ -272,9 +272,9 @@ html #searchSpell
 	text-decoration: none;
 }
 
-body {    
+body {
     background-color: #FAFAFA;
-    font-size: 12pt;	
+    font-size: 12pt;
 }
 
 
@@ -777,10 +777,10 @@ body {
 }
 
 .card .name
-{	
-	font-size: 14px; 
+{
+	/* font-size: 14px; */
 	line-height: normal;
-	padding: 6px 5px;
+	padding: 3px 4px;
 	margin: 0;
 	text-transform: uppercase;
 	text-align: center;
@@ -815,7 +815,7 @@ body {
 	font-size: 11px;
 	line-height: 9.5px;
 	min-height: 25px;
-	width: 50%;	
+	width: 50%;
 	margin: 0;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -944,7 +944,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	line-height: 12px;
-	content: "                                                                                                    ";
+	content: "îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ îŒ‹ ";
 }
 
 .card .b-lt:after,
@@ -963,7 +963,7 @@ body {
 	position: relative;
 	line-height: 12px;	
 	margin-top: -24px;	
-	content: "                                                                                                    ";
+	content: "îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ îŒ ";
 }
 
 
@@ -1368,17 +1368,17 @@ html .showAll .mirrorpage
 	.card.class-1,
 	.card.class-1 .need
 	{
-		background-color:maroon!important;
+		background-color:#3c54c9!important;
 	}
 
 	.card.card-right.class-1
 	{
-		box-shadow:maroon 0 10px 0px 10px!important;
+		box-shadow:#3c54c9 0 10px 0px 10px!important;
 	}
 
 	.card.class-1 .back .body *
 	{
-		color:maroon!important;
+		color:#3c54c9!important;
 	}
 
 
@@ -1391,7 +1391,7 @@ html .showAll .mirrorpage
 	.card.class-1 .b-lb,
 	.card.class-1 .b-rb
 	{
-		border-color:maroon!important;
+		border-color:#3c54c9!important;
 	}
 
 	.card.class-1 .status li em,
@@ -1413,7 +1413,7 @@ html .showAll .mirrorpage
 	.class-1 .body .b-lb:before,
 	.class-1 .body .b-rb:before
 	{
-		color:maroon!important;
+		color:#3c54c9!important;
 	}
 
 
@@ -1421,17 +1421,17 @@ html .showAll .mirrorpage
 	.card.class-2,
 	.card.class-2 .need
 	{
-		background-color:#8c5385!important;
+		background-color:#cc3dad!important;
 	}
 
 	.card.card-right.class-2
 	{
-		box-shadow:#8c5385 0 10px 0px 10px!important;
+		box-shadow:#cc3dad 0 10px 0px 10px!important;
 	}
 
 	.card.class-2 .back .body *
 	{
-		color:#8c5385!important;
+		color:#cc3dad!important;
 	}
 
 
@@ -1444,7 +1444,7 @@ html .showAll .mirrorpage
 	.card.class-2 .b-lb,
 	.card.class-2 .b-rb
 	{
-		border-color:#8c5385!important;
+		border-color:#cc3dad!important;
 	}
 
 	.card.class-2 .status li em,
@@ -1466,24 +1466,24 @@ html .showAll .mirrorpage
 	.class-2 .body .b-lb:before,
 	.class-2 .body .b-rb:before
 	{
-		color:#8c5385!important;
+		color:#cc3dad!important;
 	}
 
 
 	.card.class-3,
 	.card.class-3 .need
 	{
-		background-color:#ffad46!important;
+		background-color:#d9d916!important;
 	}
 
 	.card.card-right.class-3
 	{
-		box-shadow:#ffad46 0 10px 0px 10px!important;
+		box-shadow:#d9d916 0 10px 0px 10px!important;
 	}
 
 	.card.class-3 .back .body *
 	{
-		color:#ffad46!important;
+		color:#d9d916!important;
 	}
 
 
@@ -1496,7 +1496,7 @@ html .showAll .mirrorpage
 	.card.class-3 .b-lb,
 	.card.class-3 .b-rb
 	{
-		border-color:#ffad46!important;
+		border-color:#d9d916!important;
 	}
 
 	.card.class-3 .status li em,
@@ -1518,7 +1518,7 @@ html .showAll .mirrorpage
 	.class-3 .body .b-lb:before,
 	.class-3 .body .b-rb:before
 	{
-		color:#ffad46!important;
+		color:#91913f!important;
 	}
 
 
@@ -1577,17 +1577,17 @@ html .showAll .mirrorpage
 	.card.class-5,
 	.card.class-5 .need
 	{
-		background-color:#3bafb1!important;
+		background-color:#4dbfbf!important;
 	}
 
 	.card.card-right.class-5
 	{
-		box-shadow:#3bafb1 0 10px 0px 10px!important;
+		box-shadow:#4dbfbf 0 10px 0px 10px!important;
 	}
 
 	.card.class-5 .back .body *
 	{
-		color:#3bafb1!important;
+		color:#4dbfbf!important;
 	}
 
 
@@ -1600,7 +1600,7 @@ html .showAll .mirrorpage
 	.card.class-5 .b-lb,
 	.card.class-5 .b-rb
 	{
-		border-color:#3bafb1!important;
+		border-color:#4dbfbf!important;
 	}
 
 	.card.class-5 .status li em,
@@ -1622,24 +1622,24 @@ html .showAll .mirrorpage
 	.class-5 .body .b-lb:before,
 	.class-5 .body .b-rb:before
 	{
-		color:#3bafb1!important;
+		color:#3d9999!important;
 	}
 
 
 	.card.class-6,
 	.card.class-6 .need
 	{
-		background-color:#857056!important;
+		background-color:#99cc66!important;
 	}
 
 	.card.card-right.class-6
 	{
-		box-shadow:#857056 0 10px 0px 10px!important;
+		box-shadow:#99cc66 0 10px 0px 10px!important;
 	}
 
 	.card.class-6 .back .body *
 	{
-		color:#857056!important;
+		color:#99cc66!important;
 	}
 
 
@@ -1652,7 +1652,7 @@ html .showAll .mirrorpage
 	.card.class-6 .b-lb,
 	.card.class-6 .b-rb
 	{
-		border-color:#857056!important;
+		border-color:#99cc66!important;
 	}
 
 	.card.class-6 .status li em,
@@ -1674,7 +1674,7 @@ html .showAll .mirrorpage
 	.class-6 .body .b-lb:before,
 	.class-6 .body .b-rb:before
 	{
-		color:#857056!important;
+		color:#98b37d!important;
 	}
 
 
@@ -1733,17 +1733,17 @@ html .showAll .mirrorpage
 	.card.class-8,
 	.card.class-8 .need
 	{
-		background-color:rgb(248, 58, 34)!important;
+		background-color:#91f2f2!important;
 	}
 
 	.card.card-right.class-8
 	{
-		box-shadow:rgb(248, 58, 34) 0 10px 0px 10px!important;
+		box-shadow:#91f2f2 0 10px 0px 10px!important;
 	}
 
 	.card.class-8 .back .body *
 	{
-		color:rgb(248, 58, 34)!important;
+		color:#91f2f2!important;
 	}
 
 
@@ -1756,7 +1756,7 @@ html .showAll .mirrorpage
 	.card.class-8 .b-lb,
 	.card.class-8 .b-rb
 	{
-		border-color:rgb(248, 58, 34)!important;
+		border-color:#91f2f2!important;
 	}
 
 	.card.class-8 .status li em,
@@ -1778,7 +1778,7 @@ html .showAll .mirrorpage
 	.class-8 .body .b-lb:before,
 	.class-8 .body .b-rb:before
 	{
-		color:rgb(248, 58, 34)!important;
+		color:#63a6a6!important;
 	}
 
 
@@ -1786,17 +1786,17 @@ html .showAll .mirrorpage
 	.card.class-9,
 	.card.class-9 .need
 	{
-		background-color:rgb(248, 58, 34)!important;
+		background-color:#d9a336!important;
 	}
 
 	.card.card-right.class-9
 	{
-		box-shadow:rgb(248, 58, 34) 0 10px 0px 10px!important;
+		box-shadow:#d9a336 0 10px 0px 10px!important;
 	}
 
 	.card.class-9 .back .body *
 	{
-		color:rgb(248, 58, 34)!important;
+		color:#d9a336!important;
 	}
 
 
@@ -1809,7 +1809,7 @@ html .showAll .mirrorpage
 	.card.class-9 .b-lb,
 	.card.class-9 .b-rb
 	{
-		border-color:rgb(248, 58, 34)!important;
+		border-color:#d9a336!important;
 	}
 
 	.card.class-9 .status li em,
@@ -1831,7 +1831,7 @@ html .showAll .mirrorpage
 	.class-9 .body .b-lb:before,
 	.class-9 .body .b-rb:before
 	{
-		color:rgb(248, 58, 34)!important;
+		color:#d9a336!important;
 	}
 
 	
@@ -2034,10 +2034,6 @@ input[name="level"]
 	left:60px;
 }
 
-.card *
-{
-	/* color:black!important; */
-}
 .card .need,
 .card .type,
 .card .class
@@ -2076,7 +2072,7 @@ input[name="level"]
 {
 	width: 2.5in;
 	min-width: 2.5in;
-	height: 3.5in;	
+	height: 340px;	
 }
 
 .pages .cardlist
